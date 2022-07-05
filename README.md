@@ -1,63 +1,39 @@
+# ML_Movie_Recommendations_Systems
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ByronKrauskopf/Group_3_Final_Project/Resources/logo.png">
+    <img src="https://github.com/ByronKrauskopf/Group_3_Final_Project/blob/main/Resources/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Movie Recommendation ML Model
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ByronKrauskopf/Group_3_Final_Project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://public.tableau.com/app/profile/douguot/viz/MoviesRecommendations/DashboardOverview">View Tableau</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/ByronKrauskopf/Group_3_Final_Project/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/ByronKrauskopf/Group_3_Final_Project/issues">Request Feature</a>
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
+<!--################TABLE OF CONTENTS################-->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#project-overview">Project Overview</a>
       <ul>
+        <li><a href="#project-inspirations">Project Inspirations</a></li>
+        <li><a href="#data-source">Data Source</a></li>
+        <li><a href="#targeted-shareholders">Targeted Shareholders</a></li>
+        <li><a href="#questions-to-be-answered">Questions to be answered</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -65,189 +41,326 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#relational-database-setup">Relational Database Setup</a></li>
+        <li><a href="#erd-database-diagram">ERD Database Diagram</a></li>
+        <li><a href="#etl-process">ETL Process</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+     <li>
+      <a href="#machine-learning-models">Machine Learning Models</a></li>
+      <ul>
+        <li><a href="#data-preprocessing">Data Preprocessing</a></li>
+        <li><a href="#1-model-based-collaborative-filtering-using-matrix-factorization">Model Based Collaborative Filtering Using Matrix Factorization</a></li>
+        <li><a href="#K-Means Model">K-Means Model</a></li>
+      </ul>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
+<!--################About################-->
+# Project Overview
+__Movie Recommendation system from MovieLens dataset__
 
+Welcome to our final data analytics project. This project aims to tell a cohesive story using a dataset. As a small team, we will create an impressive data visualization app, that will be a cumulative display of the skills we acquired throughout the bootcamp. 
+Our chosen project will be to build a movie recommendation system. With many streaming services available nowadays, building an efficient movie recommendation system has become more important due to the increase in demand to create customized content for consumers. We will be using the MovieLens dataset to build a movie recommender system. It contains approximately 25,000,000 movie ratings of 209,171 movies made by 162,541 MovieLens users.  The reason we chose this topic is because we have a large dataset to work with and we all enjoy watching movies and are looking for a recommendation on what to watch next. The main questions we want to answer with the dataset is: 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+## Project Inspirations
+With many streaming services available nowadays, building an efficient movie recommender system has become more important due to the increase in demand to create customized content for consumers. We will be using the MovieLens dataset to build a movie recommender system. 
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+## Data Source
+MovieLens 25M Dataset: https://grouplens.org/datasets/movielens/25m/
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+## Targeted Shareholders
+The potential customers are movie streaming companies looking to improve their recommendation algorithms, and everyday movie watchers looking for better more accurate recommendations.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+## Questions to be answered
+The principle question we need to address with the dataset is: __Can we accurately predict movie reccomendations for users based off their previous ratings?__
+A follow up question to this is __What is the best Machine Learning model for this purpose?__
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
+### Built With:
+- AWS
+- Postgres SQL + PgAdmin
+- Python 3.4
+- Tableau
+- HTML
+- JS
+- Flask
+- Jupyter Notebook
+- Google Colab
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+<!--#############Getting Started################-->
+# Getting Started
 
 ### Prerequisites
+- installation packages and software versions
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+### Relational Database Setup
+Using a database connected with AWS is a convenient way to store different datasets that have relationships with each other.
 
-### Installation
+Additional instructions to set up a PostgreSQL database instance with Amazon Web Services (AWS) can be found in this [link](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html).
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+*Initial AWS DB setup instructions:*
+1. Create and sign into your AWS Management console and open the Amazon RDS Console at https://console.aws.amazon.com/rds/.
+2. In the upper-right corner related to the AWS Managment Console, Choose the AWS Region where you will create the DB Instance. 
+3. In the Navigation pane, choose **Databases**.
+5. Choose **Create Databases.** and select the **Easy create** option.
+6. On the **Create database** page, shown following, make sure that the **Standard create** option is chosen, and then choose **PostgreSQL**.
+7. Under **Version**, click on the dropdown menu and select PostgreSQL 12.8-R1. This allows us to select the free tier for DB template.
+9. For **Templates**, select **Free tier**.
+10. Enter a name for the **DB instance identifier**.
+11. For **Master username**, enter a name for the master user or leave it to the default name,
+12. For **Master password**, enter a password or use an auto generated password by clicking the checkbox, **Auto generate a password**
+13. Under the **Connectivity** section, click the **Additional connectivity configuration** drop down to display more options. Under **Publicly accessible** options, select **Yes**.
+14. Scroll to the bottom and select **Create database** button. On the main AWS RDS dashboard, you should see your newly created database. It will take some time to be initialized and created. 
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+*Connecting the DB with pgAdmin:*
+1. Navigate to the **Services** drop down tab and select **RDS**.
+2. Under the **Resources** section, select **DB Instances** link.
+3. Click the DB instance.
+4. Copy the **Endpoint** under the **Connectivity & Security** section. This endpoint will be used to connect your pgAdmin to the AWS server. 
+5. Navigate to pgAdmin and login.
+6. Select **Add New Server** link. On the generated popup, enter a **Name** for the server name.
+7. Click on the **Connection** tab and in the **Host name/address** box, paste in the copied endpoint.  
+8. **Port** number should be defaulted at 5432, postgres should be the defaulted **Maintenance database** unless you choose a different username during the creation of the AWS DB.  
+9. Fill out the **Password** that you used to create the AWS database. 
+10. Click the blue **Save** button. You should have now successfully connected your AWS server to your pgAdmin. 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+### ERD Database Diagram
 
+![ERD](./Resources/ERD_image.png)
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+The schema can be viewed [here](https://github.com/ByronKrauskopf/Group_3_Final_Project/blob/main/Resources/ERD_schema.txt)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### ETL Process
 
+The ETL process was performed using python in jupyter notebooks. The data was then uploaded to PostgresSQL using SQlAlchemy. The code can be reviewed [here](https://github.com/ByronKrauskopf/Group_3_Final_Project/blob/main/ETL_code/ETL%20.ipynb)
 
-<!-- CONTRIBUTING -->
-## Contributing
+Successful upload to the database was confirmed using a series of SQL queries that can be found [here](https://github.com/ByronKrauskopf/Group_3_Final_Project/blob/main/ETL_code/ETL_result_queries.sql)
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+The ETL process consisted of the following steps:
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+1) Links table cleaning
+  - Load raw data file 'raw_links.csv'
+  - Check for null values.
+      - 107 null values were found in the tmdbId column. These are acceptable in the data as this column is not intended to be used.
+  - Check data types
+  - Convert tmbdId data type from float to integer in accordance with ERD.
+  - Fill all Nan's in tmdbId column with "0" as placeholder
+  - Export cleaned data as 'clean_links.csv' file ready for upload to database.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2) Tags table cleaning
+  - Load raw data file 'raw_tags.csv'
+  - Check for null values.
+      - 16 null values found in tags column. These are acceptable in the data as this column is not intended to be used.
+  - Check data types
+  - convert timestamp column from Unix to standard format.
+  - Export cleaned data as 'clean_tags.csv' file ready for upload to database.
+
+3) Movies table cleaning
+  - Load raw data file 'raw_movies.csv'
+  - Use regex to separate release year from title column ito it's own year column.
+  - Check for null values.
+      - 410 null values found in year column. These are acceptable in the data as our primary focus is on the movie title and they constitue only a very samll porpotoin of the total data set. 
+  - Check data types
+  - Convert year data type from object to integer in accordance with ERD.
+  - Fill all Nan's in year column with "0" as placeholder
+  - Export cleaned data as 'clean_movies.csv' file ready for upload to database.
+
+4) Ratings table cleaning
+  - Load raw data file 'raw_ratings.csv'
+  - Check for null values.
+  - Check data types
+  - Convert timestamp column from Unix to standard format.
+  - Export cleaned data as 'clean_ratings.csv' file ready for upload to database.
+
+5) Genome Scores table cleaning
+  - Load raw data file 'raw_genome_scores.csv'
+  - Check for null values.
+  - Check data types
+  - Export cleaned data as 'clean_genome_scores.csv' file ready for upload to database.
+
+5) Genome Tags table cleaning
+  - Load raw data file 'raw_genome_tags.csv' 
+  - Check for null values.
+  - Check data types
+  - Export cleaned data as 'clean_genome_scores.csv' file ready for upload to database.
+
+6) Load cleaned data csvs into PostgreSQL
+  - create database connection string and engine
+  - import cleaned csv files and chunk into groups of 100,000
+  - export data to PostgreSQL 
+  - initiate, run, and print timer during upload to monitor progress
+
+7) Confirm successful upload using SQl queries
+  - Query SELECT * from each table to check all columns loaded
+  - Query SELECT COUNT * form each table to check that all rows loaded
+  - Use ALTER TABLE for each table to drop the unneccessary index column that    uploaded with the data from python.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!--################Machine Learning Models #################-->
 
+# Machine Learning Models
 
-<!-- LICENSE -->
-## License
+### **Data Preprocessing**
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+In the data preprocessing phase the following steps were taken:
+
+1) The movies and ratings tables form the database were called from the database using SQLAlchemy.
+2) A left join on "movieId" was perfromed on the two tables.
+3) Using groupby and count functions the number of ratings by userId was calculated.
+4) Using groupby and count functions the number of ratings by movieId was calculated.
+5) Any userIds that have reviewed less than 100 movies was dropped using filter.
+6) Any movieIds that have less then 100 reviews was dropped using filter.
+7) Resulting DataFrame contained 7 columns and 19,761,870 rows.
+8) The sparcity of the DataFrame was checked and result was 0.9689 indicating that 96.89% of cells have values
+9) Unneccessary columns were dropped 
+10) Processed DataFrame was uploaded to PostgresSQL under table name Model_Refined_Data
+
+The Model_Refined_Data table created by this process will be the common source loaded into both of the Machine Learning models outlined below. During the preprocessing the decision was made to exclude any userIds and movieIds that had less than 100 reviews. This was done to reduce the overall size of the dataset being used to improve its efficency. The assumption is that excluding these small values will have little to no impact on the overall accuracy of the models. 
+
+**Code:** The code for the data preprocessing can be found [here](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/main/ETL_and_Preprocessing_code/Model_Data_Preprocessing.ipynb)  
+
+### **1 - Model Based Collaborative Filtering Using Matrix Factorization (MF)**
+
+**The Model:** The model is a collaborative filtering method that finds the relationship between items and users’ entities. The model learns the latent preferences of users and the latent attributes of items from known ratings to find similarity and make a recommendation. The model uses low-rank matrix factorization to derive the preferences from the dataset. Matrix factorization is the preferred model for recommender systems since it can deal with scalability and sparsity better than Memory-based collaborative filtering.  
+
+**Why we are using it:** The model can discover hidden correlation/features in the dataset, remove redundant and noisy features, and can access easier data storage and processing. The model is known for its scalability and better handling of sparsity in matrixes. 
+
+**The Math & Decision-making:** The matrix factorization method used for this method is the **Singular value decomposition (SVD)**. The matrix is built using user ids and movies and then SVD is used to create the best lower rank matrix that is the closest approximation to the original matrix. Once the matrix is decomposed, a function is a built to recommend movies for any user. Although movie genres are not used as a feature, the model does pick up on these underlying preferences for users based off the movies they have already rated. Once the model is trained, it can be used to predict the movie rating for a user for any movie in the database. 
+Features of the model: Movie ratings
+
+**Features of the model:** User Ids, Movie Ids. The model uses SVD to build a the best lower rank matrix of User Id x Movie Id, with ratings as the values. 
+
+**Predicted Output:** List of recommended movies
+
+**Splitting and Training the data set** : The dataset was split into a much smaller set due to the size of the original dataset. From there 5 splits were made to determine the accuracy of the dataset using the cross-validate function in sci-kit surprise. This gave us the results for RMSE. 
+
+**Code:** The code for this model can be found [here](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/main/ML_code/movierecommendermatrixfactorization.py) 
+
+### **2 - K-Means Clustering**
+
+**The Model:**  K-means is an unsupervised learning algorithm used to identify and solve clustering issues. K represents how many clusters there will be. These clusters are then determined by the means of all the points that will belong to the cluster. The K-means algorithm groups the data into K clusters, where belonging to a cluster is based on some similarity or distance measure to a centroid.  
+
+**Why we are using it:** There are two key differences in unsupervised learning: no paired inputs and outcomes, and the model uses a whole dataset as input. Since we are lacking of user info in our datasets, there are not enough features to set as training input using a supervised machine learning model. Besides, clustering is a good way for us to group our users and come up with a movie recommending predicition as per group movie perference. Thus we choose K-Means Clustering model to use in our project.  
+
+**The Math & Decision-making:** K-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster. In this case, we cluster our users as per their average ratings for each movie genre. We believe the users who rated a movie a similar score, they may share a similar movie taste. Thus we group them altogether and if a user in the group has not watched a specific movie, we may use the average ratings from other users in the group to predict whether he/she would like such movie.  
+
+**Features of the model:** Userid, movie ratings, genres.  
+
+**Splitting and Training the data set:** Since we have more than 25 million rows in the original csv file, we combed and filtered the ratings.csv file and saved as the Model_Refined_Data.csv. We removed users who have rated less than 100 movies and also removed movies which have less than 100 ratings. We firstly use genre " Romance", "Scifi" and "ACTION" as a test to see how our K-means clustering model works. However, since we have 20 genres, scartter plot would not suitable for us to virtural the results, thus we use heatmap to show the final results. Besides, Since most users have not rated and watched most movies, we could only get a small number of cells have values. Thus, in order to present a more 'dense' region of this sparse dataset, I chose to sort the most rated movies. We peak at the top of the dataset and see what happens.  
+
+**Predict Outcomes:** The graph filters the data to only show the most rated movies, and then sorts them by average rating. The more similar the ratings in a cluster are, the more vertical lines in similar colors you'll be able to trace in that cluster.  
+
+ - Some clusters are more sparse than others, containing people who probably watch and rate less movies than in other clusters.
+ - Some clusters are mostly yellow and bring together people who really love a certain group of movies. Other clusters are mostly green or blue meaning they contain people who agree that a certain set of movies deserves 2-3 stars.
+ - The purple cells mean that the user has not watched the movie thus the rating is 0.
+ - It's easy to spot horizontal lines with similar colors, these are users without a lot of variety in their ratings. A rating of four stars means different things to different people but shows the same.  
+As per this logic, if we calculate the average score in this cluster for every movie, we would have an understanding for how this 'taste cluster' feels about each movie in the dataset. We could input a userid and get his/her cluster and then find out which of the movies the user hasn't watched, and provide he/she a movie recommending list as per the average ratings of other users in the cluster about such movies.  
+Here is a sample result:  
+![ML_KMEANS_SAMPLE_RESULT](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/a22bba16db1c0e2b23ebd60db6b68b3cecd7cb83/Resources/ML_KMEANS_SAMPLE_RESULT.png)
+
+**Code:** The code for this model can be found [here](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/main/ML_code/notebooks/ML_K-means_Cluster.ipynb)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!--################ Dashboard #################-->
 
+# Dashboard
 
-<!-- CONTACT -->
-## Contact
+### Description of the tool that will be used to create the final dashboard
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+After the ETL process, the group will develop a data analysis using Tableau to visualize the data. We will do all the investigation and data analysis to answer all questions related to the project of movie recommendation. Initially, we will create a worksheet with several graphs and specific studies. Soon after, we will be preparing a template for our Dashboard, containing the main analyzes and graphs. Finally, we will organize the story by grouping all the results obtained and presenting the highlights and recommendations to the stakeholders.
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Our Group decided to use Tableau and Dashboard to present all relationship, patterns, findings, and highlights from the data analysis process. 
+
+The dashboard blueprint consists of eight graphs, and all elements are connected and interactive using Tableau as a tool for visualization.
+
+### Description of interactive element(s):
+
+* Graph 1:  Numerical overview related to the exploratory data analysis. The objective is to show an overview related to the database analyzed.
+* Graph 2:  Top rated movies. The objective is to verify what is the movie (title) with the highest rating among users Top-rated.
+* Graph 3: Number of movies by genre. The objective is to show the distribuition of movies by genre in quantity.
+* Graph 4: Total users (Id's) per year. The objective is to show the distribution of users who evaluated the films by year.
+* Graph 5:  The number of films released per year. The objective is to show the distribution of movies released by year.
+* Graph 6: Number of movies rating by genre. The objective is to show the distribution of movies rating by genre.
+* Graph 7: The number of ratings. Distribution of all movie ratings in quantity.
+
+Follow below the image of our dashboard:
+
+![](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/Douglas/Dashboard/Capture_%20Dashboard_description%20of%20interactive%20elements.PNG)
+
+Follow below the image of our Heatmpa and movies released racing bar chart:
+
+![](https://github.com/ByronKrauskopf/ML_Movie_Recommendations_Systems/blob/Douglas/Dashboard/Capture_%20Dashboard_Heatmap%20and%20movies%20released%20racing%20bar%20chart%20with%20interactive%20elements.PNG)
+
+### Storyboard on Google Slide(s):
+
+To end, we develop an Storyboard on Google Slide(s) available on following link: https://docs.google.com/presentation/d/1VwYMOzThBx8R92Co6KbsnSdxZkLTR5lw/edit?usp=sharing&ouid=110832098454737220689&rtpof=true&sd=true.
+
+### Tableau Visualization and Storyboard
+
+We are using Tableau as a tool for visualization and to present a storyboard to the stakeholders.
+
+We enhance our visualization by adding some features on the Tableau, such as bar chart race and hyperlink. The bar chart race is a visualization feature to show which genres were released in animation mode. The hyperlink is a feature that creates a link clicking on the movie title and opening a new windows tab on the imdb page showing additional information related to the movie selected, such as movie image, year, and others.
+
+Our tableau file is available on the following links below:
+
+* Tableau Dashboard: https://public.tableau.com/app/profile/douguot/viz/MoviesRecommendations/DashboardOverview
+* Tableau Heatmap: https://public.tableau.com/app/profile/douguot/viz/MoviesRecommendationsHeatmapandracingbarchart/Dashboard2?publish=yes
+* Tableau Story: https://public.tableau.com/app/profile/douguot/viz/MoviesRecommendationsStory/Story1?publish=yes
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!--################Results################-->
+# Results
+For this project, we had used two machine learning models. They were K-Means and Collaborative Filtering Using Matrix Factorization. The K-Means model group users in clusters based on their average ratings of a movie genre, and come up with the predictions as per the cluster taste. However, from using these two models, we learned that the K-Means model produced inconsistent results due to the replacing of the NaN values with 0's that affect the calculations. With the MF model, it is able to fill in the user-movie matrix with predicted ratings by first decomposing the matrix into a lower rank via single-value decomposition and then prediciting the ratings. This made it easier to build a function that would output a list of recommendations for users. The RMSE for the MF model was 0.8057. This is an acceptable value, but ideally the RMSE should be over 0.9. This shows there is room for improvement in the model. 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!--################Acknowledgements################-->
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+# Acknowledgements
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Data source - https://grouplens.org/datasets/movielens/
+
+Machine Learning Article - https://towardsdatascience.com/the-4-recommendation-engines-that-can-predict-your-movie-tastes-109dc4e10c52
+
+Code Example - https://github.com/khanhnamle1994/movielens/blob/master/SVD_Model.ipynb
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!--################Contributors################-->
+
+# Limitations related to the project
+
+Some limitations were found in the development of the project.
+
+* Database: MovieLens Dataset does not contain additional information related to users, limiting the variables for recommending movies.
+* Big Data: The database used contains more than 25MM lines. The tableau for example can only load up to 15MM. Jupyter Notebook also has limitations for Big Data, using Python and Pandas.
+* Machine Learning: Some Machine Learning models may not be effective for use in recommending movies, making it necessary to research other more efficient models.
+
+# Recommendation for future analysis
+
+For future analysis, we recommend the use of a dataset containing more information related to users, such as gender, age, nationality, among others. This will allow an analysis based on the user's profile, increasing variables to be used in Machine Learning Models.
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+# Contributing
+<div align="center">
+  <a href="https://github.com/ByronKrauskopf/Group_3_Final_Project/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=ByronKrauskopf/Group_3_Final_Project" />
+  </a>
+</div>
+
+- Douglas Oliveira
+- Omar Zu'bi
+- Jathuson Jayakumar
+- Danni Yang
+- Byron Krauskopf
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
